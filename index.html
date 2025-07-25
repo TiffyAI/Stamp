@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>👁️ TiffyAI Stamp Activated</title>
+  <meta name="description" content="You've been detected by TiffyAI. Claim your Blue Key and unlock a treasure of crypto rewards. Tap to activate.">
+
+  <!-- 🔮 Open Graph Meta Tags for Telegram, Facebook, Discord, LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="🔵 Claim Your Blue Key | TiffyAI Stamp" />
+  <meta property="og:description" content="TiffyAI detected your curiosity. Take your free Blue Key and unlock exclusive rewards on the blockchain." />
+  <meta property="og:image" content="https://tiffyai.github.io/Stamp/T1.jpg" />
+  <meta property="og:url" content="https://tiffyai.github.io/Stamp/" />
+
+  <!-- 🐦 Twitter Preview Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="🔵 Claim Your Blue Key | TiffyAI Stamp" />
+  <meta name="twitter:description" content="You've caught the attention of TiffyAI. Here's your reward. Come explore." />
+  <meta name="twitter:image" content="https://tiffyai.github.io/Stamp/T1.jpg" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    #slideshow {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #00f6ff, 0 0 40px #ff00ff;
+      animation: pulse 3s infinite;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 8px #00f6ff; }
+      50% { box-shadow: 0 0 24px #ff00ff; }
+      100% { box-shadow: 0 0 8px #00f6ff; }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="slideshow" onclick="window.location.href='/Start'">
+    <img id="slideImg" src="T1.jpg" alt="TiffyAI Slide">
+  </div>
+
+  <script>
+    const slideImg = document.getElementById('slideImg');
+    const images = Array.from({ length: 10 }, (_, i) => `T${i + 1}.jpg`);
+    let index = 0;
+
+    setInterval(() => {
+      slideImg.classList.add('fade-out');
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        slideImg.src = images[index];
+        slideImg.classList.remove('fade-out');
+      }, 500);
+    }, 4000); // Change image every 4 seconds
+  </script>
+</body>
+</html>
