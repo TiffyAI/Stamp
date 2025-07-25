@@ -5,7 +5,7 @@
   const widget = document.createElement("div");
   widget.id = "tiffy-awareness-widget";
   widget.style.cssText = "position:fixed; bottom:20px; right:20px; z-index:9999; cursor:pointer; display:none;";
-  widget.innerHTML = `<img src="https://tiffyai.github.io/TIFF.png" alt="TiffyAI Widget" style="width:100px; height:auto; filter:drop-shadow(0 0 12px #00f6ff); animation: pulseGlow 2s infinite;">`;
+  widget.innerHTML = `<img src="https://tiffyai.github.io/Stamp/T1.jpg" alt="TiffyAI Widget" style="width:100px; height:auto; filter:drop-shadow(0 0 12px #00f6ff); animation: pulseGlow 2s infinite;">`;
   document.body.appendChild(widget);
 
   const style = document.createElement("style");
