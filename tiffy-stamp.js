@@ -8,10 +8,20 @@
   const widget = document.createElement("div");
   widget.id = "tiffy-awareness-widget";
   widget.style.cssText = "position:fixed; bottom:20px; right:20px; z-index:9999; cursor:pointer; display:none;";
-  widget.innerHTML = `
-    <img src="https://tiffyai.github.io/Stamp/T1.jpg" alt="TiffyAI Widget"
-      style="width:620px; height:auto; filter:drop-shadow(0 0 12px #00f6ff); animation: pulseGlow 3s infinite;">
+
+  const img = document.createElement("img");
+  img.src = "https://tiffyai.github.io/Stamp/T1.jpg";
+  img.alt = "TiffyAI Widget";
+  img.style.cssText = `
+    width: 620px;
+    height: auto;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 12px #00f6ff);
+    animation: pulseGlow 3s infinite;
+    transition: opacity 1s ease-in-out;
   `;
+
+  widget.appendChild(img);
   document.body.appendChild(widget);
 
   const style = document.createElement("style");
@@ -23,6 +33,17 @@
     }
   `;
   document.head.appendChild(style);
+
+  // Start the slideshow (T1.jpg to T10.jpg)
+  let currentImage = 1;
+  setInterval(() => {
+    currentImage = (currentImage % 10) + 1;
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = `https://tiffyai.github.io/Stamp/T${currentImage}.jpg`;
+      img.style.opacity = 1;
+    }, 500);
+  }, 4000);
 
   function getBlueKeyCount() {
     return parseInt(localStorage.getItem(keyStorageKey) || "0");
