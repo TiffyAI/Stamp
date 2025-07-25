@@ -13,7 +13,7 @@
   img.src = "https://tiffyai.github.io/Stamp/T1.jpg";
   img.alt = "TiffyAI Widget";
   img.style.cssText = `
-    width: 620px;
+    width: 720px;
     height: auto;
     border-radius: 20px;
     filter: drop-shadow(0 0 12px #00f6ff);
