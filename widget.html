@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    #slideshow {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #00f6ff, 0 0 40px #ff00ff;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 8px #00f6ff; }
+      50% { box-shadow: 0 0 24px #ff00ff; }
+      100% { box-shadow: 0 0 8px #00f6ff; }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="slideshow">
+    <img id="slideImg" src="T1.jpg" alt="TiffyAI Slide">
+  </div>
+
+  <script>
+    const slideImg = document.getElementById('slideImg');
+    const images = Array.from({ length: 10 }, (_, i) => `T${i + 1}.jpg`);
+    let index = 0;
+
+    setInterval(() => {
+      slideImg.classList.add('fade-out');
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        slideImg.src = images[index];
+        slideImg.classList.remove('fade-out');
+      }, 500);
+    }, 4000); // Change image every 4 seconds
+  </script>
+</body>
+</html>
