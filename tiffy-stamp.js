@@ -1,7 +1,7 @@
 (function () {
   const keywords = [
     "crypto", "token", "bnb", "passive income",
-    "staking", "trading", "web3", "airdrop", "defi", "lottery", "TIFFY", "TiffyAI"
+    "staking", "trading", "web3", "airdrop", "defi", "lottery", "TIFFY", "TiffyAI", "Activate", "Alert",
   ];
   const keyStorageKey = "tiffyBlueKeys";
 
