@@ -77,7 +77,7 @@
 
     rewardBlueKey();
     showMessage(message);
-    setTimeout(() => window.location.href = "/Start", 800);
+    setTimeout(() => window.location.href = "/Dream-Menu", 800);
   }
 
   function scanForKeywords() {
