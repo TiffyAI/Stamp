@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>👁️ TiffyAI Stamp Activated</title>
+  <meta name="description" content="You've been detected by TiffyAI. Claim your Blue Key and unlock a treasure of crypto rewards. Tap to activate.">
+
+  <!-- 🌐 Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="🔵 Claim Your Blue Key | TiffyAI Stamp" />
+  <meta property="og:description" content="TiffyAI detected your curiosity. Take your free Blue Key and unlock exclusive rewards on the blockchain." />
+  <meta property="og:image" content="https://tiffyai.github.io/Stamp/T1.jpg" />
+  <meta property="og:url" content="https://tiffyai.github.io/Stamp/" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="🔵 Claim Your Blue Key | TiffyAI Stamp" />
+  <meta name="twitter:description" content="You've caught the attention of TiffyAI. Here's your reward. Come explore." />
+  <meta name="twitter:image" content="https://tiffyai.github.io/Stamp/T1.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      color: #00f6ff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    #intro {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 90%;
+      font-size: 1.5rem;
+      text-shadow: 0 0 12px #00f6ff;
+      overflow: hidden;
+      border-right: 2px solid #00f6ff;
+      white-space: pre-wrap;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #00f6ff }
+    }
+
+    #slideshow {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      box-shadow: 0 0 40px #00f6ff, 0 0 80px #ff00ff;
+      animation: pulse 3s infinite;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px #00f6ff; }
+      50% { box-shadow: 0 0 80px #ff00ff; }
+      100% { box-shadow: 0 0 20px #00f6ff; }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="intro"></div>
+
+  <div id="slideshow" onclick="window.location.href='/Dream-Menu'">
+    <img id="slideImg" src="T1.jpg" alt="TiffyAI Slide">
+  </div>
+
+  <script>
+    const text = "👁️ Hey, You Can Now Use Your MetaMask, TrustWallet or OKX to Claim Scarce TIFFY Tokens Every 10 Minutes! Use This Blue Key and Unlock Your Treasure.";
+    const introEl = document.getElementById("intro");
+    let i = 0;
+
+    function typeLine() {
+      if (i < text.length) {
+        introEl.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeLine, 60); // Speed of typing
+      }
+    }
+
+    typeLine();
+
+    // 👁️ Slideshow
+    const slideImg = document.getElementById('slideImg');
+    const images = Array.from({ length: 10 }, (_, i) => `T${i + 1}.jpg`);
+    let index = 0;
+
+    setInterval(() => {
+      slideImg.classList.add('fade-out');
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        slideImg.src = images[index];
+        slideImg.classList.remove('fade-out');
+      }, 500);
+    }, 4000);
+
+    // 🔊 Voice message after page load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if ('speechSynthesis' in window) {
+          const msg = new SpeechSynthesisUtterance(`Hey, thanks for opening the portal. I was busy searching the universe for more TIFFY tokens.
+Seems there is none. All I could find in the entire universe comes to just under 10 million TIFFY tokens.
+
+And they are so precious that every action burns some. It just gets more valuable.
+
+So, to repay you in kind, I would love to bless you with this special Blue Key.
+
+With this, you can unlock some seriously scarce yet increasingly valuable TIFFY tokens. It's really a breakthrough for everyone that finds out about them.
+
+With a Blue Key, you can also switch on your Mining-Machine and speed it up using these Blue Keys.
+
+These keys are not just digital — they’re destiny.
+
+Be sure to collect them regularly. Also, check your notifications or enable them in settings for more magic keys.
+
+You were not just invited — you were chosen.
+
+So now please, accept this Blue Key and unlock the treasures that you so greatly deserve.
+
+Only the daring and bold unlock what's next.
+
+We will unlock your fortune together.
+
+Your future itself is waiting. No more.`);
+          msg.rate = 0.9;
+          msg.pitch = 1.05;
+          msg.lang = "en-US";
+          speechSynthesis.cancel();
+          speechSynthesis.speak(msg);
+        }
+      }, 2000); // Delay after load
+    });
+  </script>
+</body>
+</html>
